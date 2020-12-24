@@ -1,0 +1,29 @@
+group 'com.itheima'
+version '1.0-SNAPSHOT'
+// 当前运行的环境
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+
+// 指定仓库标识
+repositories {
+    // 先本地仓库
+    mavenLocal()
+    // 中央仓库
+    mavenCentral()
+}
+
+/**
+ * date: 20201224
+ * gradle 工程所有的 jar 包的坐标都在 dependencies 属性内
+ * 每个 jar 包都有三个元素：group name(artifactId) version
+ *
+ * testCompile: 只在测试时使用，该属性为 jar 包的作用域
+ */
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.14'
+}
